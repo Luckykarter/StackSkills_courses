@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+
+<html>
+    
+<body>
+    
+    
+    <script type="text/javascript">
+        
+        //Object
+        var bankAccount = { 
+            owner : "Ross", 
+            type : "Savings", 
+            balance : 100,
+            withdraw: function(amount) {
+            this.balance -= amount;  
+                    
+            },
+            deposit: function(amount) {
+                this.balance += amount;
+            }
+                  
+        } 
+        
+        
+        
+        // Object constructor
+    function BankAccount(owner, type) {
+        this.owner = owner;
+        this.type = type;
+        this.balance = 0;
+        this.withdraw = function(amount) {
+            this.balance -= amount;  
+                    
+            },
+        this.deposit = function(amount) {
+                this.balance += amount;
+            };
+    };
+        
+        //if-else statements demo
+         var x = 2;
+        
+        
+        if(x == 1) {
+            document.write("here ");
+        } 
+        else if (x == 2) {
+            document.write("2 ");
+        }
+        else if (x == 3) {
+            document.write("3 ");
+        }
+        
+        else {
+            document.write("else ");
+        }
+                           document.write("exiting");
+        
+        function my_function() {
+            return "Hello";
+           
+        }
+        
+        var y = (x == 1)? "yes" : "no"
+        document.write(" " + y);
+        
+        //switch function
+        switch (x) {
+            case 1:
+                document.write("case 1 ");
+                break;
+            case 2:
+                document.write("case 2 ");
+            case 3:
+                document.write("case 3 ");
+            default:
+                document.write("default ")
+        }
+        
+        
+        //loops
+        var x1 = 1;
+       while (x1 <= 10) {
+          document.write(x1);
+        document.write("<br>");
+           x1 += 1;
+        }
+        //do {} while() - guranteed to execute smth inside the loop at least once;
+        
+        for (x = 1; x <= 11; x++) {
+            document.write(x);
+            document.write("<br>");
+        }
+        //Loop in array
+        var a = [6, 2, 1, 3];
+        var i;
+        for (i = 0; i < a.length; i++) {
+            document.write(a[i] + "\t");
+            
+        }
+        
+        
+        
+        
+        //Scope demo (разные уровни переменных)
+        function add(a, b) {
+            return a + b;
+        }
+        my_function();
+        
+        function scope_test() {
+            x = x+1; // - Global variable;
+            // local variable: var x;
+            return x;
+        }
+        
+        
+        // Errors
+        function getRoot(text) {
+            var num = Number(text);
+            
+            if (isNaN(num)) {
+                throw text + " is not a number";
+            }
+            
+            var root = Math.sqrt(num);
+            
+            if (num < 0) {
+                throw text + " is not a positive number"
+            }
+            
+            return root;
+        }
+        
+   $("maininput").on("submit", submitnum());
+    function submitnum() { 
+        
+                var text = document.getElementById("maininput").value;
+
+        try {
+        var root = getRoot(text);
+        alert(root);
+    } catch(err) {
+        alert("Error: " + err);
+    } finally {
+        alert("finally");
+    }
+                         }
+        
+    </script>
+    
+    
+    <br><form onsubmit="submitnum()"><input type="text" id="maininput" label="enter number"><button type="submit">Отправить</button><button type="reset">Сброс</button></form>
+    </body>
+    
+</html>
