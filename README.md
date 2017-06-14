@@ -1,1 +1,2 @@
-# StackSkills_courses
+# StackSkills_course
+So it is 
